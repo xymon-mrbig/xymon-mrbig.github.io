@@ -1,3 +1,5 @@
+# Uninstall
+
 Perform the following steps to uninstall Mr Big:
 
 1. Stop the service ("net stop mrbig" or GUI)

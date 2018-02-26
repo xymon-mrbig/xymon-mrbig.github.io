@@ -1,3 +1,5 @@
+# Upgrade
+
 Do this to upgrade Mr Big to the latest version:
 
 1. Get the latest zip archive in the usual place

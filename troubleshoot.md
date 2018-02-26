@@ -1,3 +1,5 @@
+# Troubleshoot
+
 OK, you have [[installed according to the instructions|Install]], you have [[configured|Configure]] until you're blue but the piece of XXX won't work.
 
 ## Has the service been installed and started?

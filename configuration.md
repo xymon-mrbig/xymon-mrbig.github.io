@@ -1,3 +1,5 @@
+# Configuration
+
 The file mrbig.cfg must exist in the same directory as mrbig.exe. It must contain at least the lines
 
     machine our.name.in.bb-hosts

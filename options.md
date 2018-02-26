@@ -1,3 +1,5 @@
+# Options
+
 ## General format:
 
 	.config hostname port

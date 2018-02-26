@@ -1,3 +1,5 @@
+# External tests
+
 External tests are active if the pickupdir option is set. Programs to be run are listed one per line under the [ext] heading or in the ext.cfg file. They are run after all other tests by the Mr Big main loop.
 
 The command should produce a file which is placed into the pickup directory. The name of the file determines the test name, i.e. the name of the column in the display. The first line in the file should be a single word indicating the status: green, yellow or red. The file name as well as the status is case sensitive.
