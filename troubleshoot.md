@@ -1,6 +1,6 @@
 # Troubleshoot
 
-OK, you have [[installed according to the instructions|Install]], you have [[configured|Configure]] until you're blue but the piece of XXX won't work.
+OK, you have [installed according to the instructions](install.md), you have [configured](configure.md) until you're blue but the piece of XXX won't work.
 
 ## Has the service been installed and started?
 Type "net start mrbig". The reply will look different depending on whether the service has been installed and/or started:
