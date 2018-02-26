@@ -1,3 +1,5 @@
+# Install
+
 The first step is to add the client to bb-hosts on the BB server. Make sure that the spelling and layout are correct.
 
 Use the Control Panel to uninstall Quest's Big Brother client if it is already installed.
