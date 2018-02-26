@@ -4,7 +4,7 @@ Mr Big is a Windows client for [Xymon](http://xymon.sourceforge.net) (previously
 [Install](install.md)  
 [Configuration](configuration.md)  
 [Options](options.md)  
-[Troubleshooting](troubleshooting.md)  
+[Troubleshoot](troubleshoot.md)  
 [External tests](externaltests.md)  
 [Uninstall](uninstall.md)  
 [Upgrade](upgrade.md)
