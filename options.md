@@ -4,6 +4,7 @@
 
 	.config hostname port
 	.bind address
+  .cfgcache <Absolute path to place the remote configuration INCLUDING FILENAME>
 	.include filename
 	# Comment
 	directive [arguments]
@@ -19,11 +20,14 @@ Options under the [mrbig] heading
 	report_size bytes (default: 16384)
 	sleep seconds (default: 300)
 	loop seconds (default: INT_MAX)
+	ttl seconds (default: 0)
 	bootyellow minutes (default: 60)
 	bootred minutes (default: 30)
 	debug level (default: 0)
 	cpuyellow percent (default: 80)
 	cpured percent (default: 90)
+	ntpskewyellow seconds (default: 60)
+	ntpskewred seconds (default: 300)
 	dfyellow percent (default: 90)
 	dfred percent (default: 95)
 	memyellow percent (default: 100)
@@ -34,17 +38,26 @@ Options under the [mrbig] heading
 	logfile filename (default: none)
 	gracetime test seconds (default: 0)
 	option name[=value]
+	memsize (default: 4)
 
 ### Disabling tests
 Individual tests can be completely disabled like this:
 
 	option no_cpu
 	option no_disk
+	option no_memory
+	option no_procs
+	option no_svcs
 	option no_wmi
+	option no_ext
 
-et al. For all tests except wmi and external scripts, this also automatically gives the tests a clear status.
+For all tests except wmi and external scripts, this also automatically gives the tests a clear status.
 
 ### Message processing
+Message processing is disabled by default. To enable it, add the following option under [mrbig]:
+
+	option enable_msgs
+
 There are three modes for event log processing. This is controlled by the following option:
 
     option fastmsgs=on
@@ -56,6 +69,19 @@ With fastmsgs=on, only the last 64k of each log is scanned. This reduces load wi
 With fastmsgs=off, the entire log is always scanned.
 
 With fastmsgs=auto (the default), the behaviour is controlled by the file fastmsgs.cfg. Processing is like off unless the file fastmsgs.cfg exists in the configuration directory. The file can be empty.
+
+### Opt-in options
+Several tests are opt-in, meaning they are off unless explicitly enabled with the `option` directive under [mrbig]:
+
+	option ntp
+Enable the ntp-skew test, which checks the system time against the configured NTP server(s) and reports the skew. The thresholds are set by ntpskewyellow and ntpskewred. Use `option no_ntp_skew` to force the test to report clear.
+
+	option enable_msgs
+Enable message processing (see above).
+
+	option no_ext
+Disable the external tests entirely.
+
 Options under the [disk] heading
 These options can also be placed in a separate disk.cfg file.
 
@@ -142,3 +168,7 @@ The operator contains is valid only for strings and checks if the string is pres
 	field Manufacturer contains Intel
 	go
 	end
+
+## Clientlog
+
+The clientlog module has its own configuration sections, `[clientlog:registry]` and `[clientlog:eventlog]`, read from the `cfg.cache` file (and, for the eventlog section, also from `mrbig.cfg`). See [Clientlog](clientlog.md) for details.

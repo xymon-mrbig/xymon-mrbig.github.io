@@ -11,3 +11,11 @@ To perform tests on behalf of other machines, specify the file name as:
 After all commands are run, files in the pickup directory are examined and reports sent to the display. The files are removed.
 
 It is not necessary to use Mr Big to generate the files. They can be produced by another scheduling mechanism, uploading files from another system etc.
+
+## Safety filter
+
+By default, Mr Big only runs external tests whose command ends in `.bat` or `.cmd` and that are not located in a system folder (Program Files, Program Data, Temp, Tmp, Windows or Users). This filter is meant to prevent accidental execution of untrusted or dangerous files.
+
+The filter is checked against the command listed in ext.cfg, not against the status file it produces.
+
+If you need to run a test that would not pass this filter, start Mr Big with the `--disable-ext-filters` command line option.

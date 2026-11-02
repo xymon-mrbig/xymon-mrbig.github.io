@@ -12,6 +12,8 @@ Run these commands in a CMD window in the same directory:
     mrbig -i
     net start mrbig
 
-This assumes that minicfg is used for centralized configuration, and that minicfg is running on host 10.0.4.5, port 27016. This port is used because 27015 was taken by Counterstrike. If minicfg is not used, every client must be configured locally; keep reading.
+To install under a different service name, use `mrbig -i<name>` instead of `mrbig -i`, then start it with `net start <name>`.
 
-Reports from the new client should start appearing within 5-10 minutes. No processes or services are monitored until this has been [configured.](configure.md)
+This assumes that minicfg is used for centralized configuration, and that minicfg is running on host 10.0.4.5, port 27016. If minicfg is not used, every client must be configured locally; keep reading.
+
+Reports from the new client should start appearing within 5-10 minutes. No processes or services are monitored until this has been [configured](configuration.md).

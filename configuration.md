@@ -15,6 +15,18 @@ Other available options in mrbig.cfg can be seen in the file mrbig.cfg.dist, whi
 
 It is not necessary to restart the service after changing the configuration.
 
+## Configuration files
+
+The main configuration file is `mrbig.cfg`. In addition, each of the following sections may also be placed in its own separate file, in the same directory as mrbig.exe:
+
+* [disk] - disk.cfg
+* [ext] - ext.cfg
+* [msgs] - msgs.cfg
+* [procs] - procs.cfg
+* [svcs] - services.cfg
+
+The contents of a separate file are combined with the same section in mrbig.cfg.
+
 ## Minicfg
 The program minicfg is run on the BB server and automatically sends a suitable configuration to the client requesting it.
 
@@ -23,6 +35,8 @@ Each client can have its own configuration to be sent by minicfg. In that case, 
 Clients without unique configuration get the contents of the file 0.0.0.0.
 
 Configuration retrieved from minicfg can be combined with local settings in mrbig.cfg. The last match applies, with the exception of messages which trigger on the first match à la access lists.
+
+When a client uses minicfg, the downloaded configuration is written to a `cfg.cache` file. Some parts of Mr Big read their configuration from this cache rather than from `mrbig.cfg`. The clientlog reads its `cfg.cache` from `C:\Windows\System32` (with a `C:\Windows\Sysnative` fallback for 32-bit processes running on 64-bit Windows). See [Clientlog](clientlog.md) for the sections that read from it.
 
 Example:
 
