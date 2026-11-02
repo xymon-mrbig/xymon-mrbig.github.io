@@ -4,7 +4,7 @@
 
 	.config hostname port
 	.bind address
-  .cfgcache <Absolute path to place the remote configuration INCLUDING FILENAME>
+  	.cfgcache <Absolute path to place the remote configuration INCLUDING FILENAME>
 	.include filename
 	# Comment
 	directive [arguments]
