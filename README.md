@@ -1,6 +1,6 @@
 Mr Big is a Windows client for [Xymon](http://xymon.sourceforge.net) (previously Hobbit), Quest's Big Brother and other compatible products. It is free software developed by [Axians](http://www.axians.se) in Sweden.
 
-[Download](https://github.com/xymon-mrbig/MrBig/releases) — get the latest release  
+[Download](https://github.com/axians/MrBig/releases/latest) — get the latest release  
 [Install](install.md) — install MrBig on a client  
 [Configuration](configuration.md) — configure the client  
 [Options](options.md) — reference for all configuration options  
